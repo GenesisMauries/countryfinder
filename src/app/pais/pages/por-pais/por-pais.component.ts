@@ -21,4 +21,8 @@ export class PorPaisComponent {
       .subscribe(paises => { console.log(paises), this.paises = paises },
         error => { this.paises = []; this.hayError = true })
   }
+  sugerencias(termino: string){
+    this.hayError = false
+    // sugerencias
+  }
 }
