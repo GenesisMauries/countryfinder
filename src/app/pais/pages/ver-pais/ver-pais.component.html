@@ -1,1 +1,41 @@
-<p>ver-pais works!</p>
+<section class="alert alert-info" *ngIf="!pais; else sectionPais">
+    Espera...
+</section>
+<ng-template #sectionPais>
+    <section class="row">
+        <section class="col-12">
+            <h2>País: <small>{{pais[0].name.common}}</small></h2>
+        </section>
+    </section>
+    <section class="row">
+        <section class="col-4">
+            <h3>Bandera</h3>
+            <img [src]="pais[0].flags.png" [alt]="pais[0].name.common" class="small-flag">
+        </section>
+        <article class="col">
+            <h3>Información</h3>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <strong>Nombre oficial : </strong>{{pais[0].name.official}}
+                </li>
+                <li class="list-group-item">
+                    <strong>Nombre oficial : </strong>{{pais[0].name.official}}
+                </li>
+                <li class="list-group-item">
+                    <strong>Lenguajes : </strong>{{pais[0]}}
+                </li>
+            </ul>
+        </article>
+    </section>
+    <h3>Nombre alternativo && Traducciones</h3>
+    <section class="row">
+        <section class="col">
+            <span class="badge bg-primary ms-1">{{pais[0].altSpellings[0]}}</span>
+            <span class="badge bg-primary ms-1">{{pais[0].altSpellings[1]}}</span>
+            <span class="badge bg-primary ms-1">{{pais[0].altSpellings[2]}}</span>
+            <span class="badge bg-primary ms-1">{{pais[0].altSpellings[3]}}</span>
+        </section>
+    </section>
+</ng-template>
+
+
